@@ -3,8 +3,8 @@
       x-data="{
       darkMode: localStorage.getItem('darkMode')
       || localStorage.setItem('darkMode', 'system'),
-      first: (localStorage.getItem('first') || localStorage.setItem('first', 'true'))}"
-      x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val)) && (first === 'true' || first === undefined ? localStorage.setItem('first', 'true') && location.reload() : null)"
+      first: localStorage.getItem('first') || localStorage.setItem('first', 'false')}"
+      x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val)); first === 'false' ? localStorage.setItem('first', 'true') && location.reload() : null"
       x-bind:class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
 >
     <head>
@@ -24,28 +24,10 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
-        <x-banner />
-
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @livewire('navigation-menu')
-
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+    <body>
+        <div class="font-sans text-gray-900 dark:text-gray-100 antialiased">
+            {{ $slot }}
         </div>
-
-        @stack('modals')
 
         @livewireScripts
     </body>

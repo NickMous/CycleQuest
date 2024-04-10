@@ -77,6 +77,8 @@
                     </div>
                 </button>
 
+                <livewire:components.language-switcher/>
+
                 @if(Auth::check())
                     <!-- Teams Dropdown -->
                     @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
@@ -181,6 +183,32 @@
                             </x-slot>
                         </x-dropdown>
                     </div>
+                @else
+                    <div class="ms-3 relative">
+                        <x-dropdown align="right" width="48">
+                            <x-slot name="trigger">
+                                    <span class="inline-flex rounded-md">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-text dark:text-dm-text bg-pr/20 dark:bg-dm-pr/20 hover:text-text-700 dark:hover:text-dm-text-300 focus:outline-none focus:bg-pr/60 dark:focus:bg-pr/60 active:bg-pr/50 dark:active:bg-dm-pr/50 transition ease-in-out duration-150">
+                                        {{ __('Guest') }}
+
+                                        <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+                                        </svg>
+                                    </button>
+                                </span>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <!-- Account Management -->
+                                <x-dropdown-link href="{{ route('login') }}">
+                                    {{ __('Log in') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('register') }}">
+                                    {{ __('Register') }}
+                                </x-dropdown-link>
+                            </x-slot>
+                        </x-dropdown>
+                    </div>
                 @endif
             </div>
 
@@ -218,8 +246,8 @@
         </div>
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-300/50 dark:border-dm-bg-600/60">
-            @if(Auth::check())
+        @if(Auth::check())
+            <div class="pt-4 pb-1 border-t border-gray-300/50 dark:border-dm-bg-600/60">
                 <div class="flex items-center px-4">
                     @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                         <div class="shrink-0 me-3">
@@ -288,8 +316,21 @@
                         @endif
                     @endif
                 </div>
-            @endif
-        </div>
+            </div>
+        @else
+            <div class="pt-2 pb-2 border-t border-gray-300/50 dark:border-dm-bg-600/60">
+
+                <div class="space-y-1">
+                    <!-- Account Management -->
+                    <x-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                        {{ __('Log in') }}
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
+                        {{ __('Register') }}
+                    </x-responsive-nav-link>
+                </div>
+            </div>
+        @endif
         <div class="pt-3 pb-3 space-y-1 border-t border-gray-300/50 dark:border-dm-bg-600/60">
             <button
                 class="relative overflow-hidden flex w-full ps-3 pe-4 py-2 border-l-4 border-transparent text-start text-base font-medium text-text dark:text-dm-text focus:outline-none focus:text-text dark:focus:text-dm-text focus:bg-ac dark:focus:bg-dm-ac focus:border-ac-300 dark:focus:border-dm-ac-300  transition duration-150 ease-in-out"
