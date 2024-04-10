@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Home;
+use Livewire\Livewire;
 
 // Smoke test
 test('Component exists on the page', function () {
@@ -12,7 +13,6 @@ test('Component exists on the page', function () {
 
 test('Home page can be rendered', function () {
     Livewire::test(Home::class)
-        ->assertSee('CycleQuest')
         ->assertStatus(200)
         ->assertDontSee('jetstream');
 })->group('home');

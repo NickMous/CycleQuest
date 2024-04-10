@@ -2,8 +2,9 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
       x-data="{
       darkMode: localStorage.getItem('darkMode')
-      || localStorage.setItem('darkMode', 'system')}"
-      x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
+      || localStorage.setItem('darkMode', 'system'),
+      first: (localStorage.getItem('first') || localStorage.setItem('first', 'true'))}"
+      x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val)) && (first === 'true' || first === undefined ? localStorage.setItem('first', 'true') && location.reload() : null)"
       x-bind:class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
 >
     <head>

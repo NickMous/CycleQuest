@@ -18,13 +18,13 @@
                     {{ __('Available languages') }}
                 </div>
 
-                <x-dropdown-button wire:click="changeLocale('en')">
+                <x-dropdown-link :href="route('language', 'en')" :active="App::getLocale() === 'en'">
                     {{ __('English') }}
-                </x-dropdown-button>
+                </x-dropdown-link>
 
-                <x-dropdown-button wire:click="changeLocale('nl')">
+                <x-dropdown-link :href="route('language', 'nl')" :active="App::getLocale() === 'nl'">
                     {{ __('Dutch') }}
-                </x-dropdown-button>
+                </x-dropdown-link>
             </div>
         </x-slot>
     </x-dropdown>

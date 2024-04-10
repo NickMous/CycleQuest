@@ -10,6 +10,7 @@
         "laravel/jetstream": "^5.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "larswiegers/laravel-translations-checker": "^0.9.1",
         "livewire/livewire": "^3.0",
         "predis/predis": "^2.2",
         "sentry/sentry-laravel": "^4.3"
