@@ -1,6 +1,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
+import daisyui from "daisyui";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -131,6 +132,10 @@ export default {
             }
         },
     },
-
-    plugins: [forms, typography], darkMode: 'selector',
+    plugins: [forms, typography, daisyui], darkMode: 'selector',
+    daisyui: {
+        themes: false,
+        darkTheme: "synthwave",
+        lightTheme: "aqua"
+    }
 };

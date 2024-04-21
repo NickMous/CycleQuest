@@ -4,9 +4,9 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="shrink-0 ms-2 mt-2 flex items-center">
                     <a href="{{ route('home') }}">
-                        <x-application-mark class="block h-9 w-auto fill-text dark:fill-dm-text"/>
+                        <x-application-mark class="block text-text dark:text-dm-text"/>
                     </a>
                 </div>
 
@@ -31,7 +31,7 @@
                     case 'light':
                         return 'dark';
                     case 'dark':
-                        return 'system';
+                        return 'light';
                     case 'system':
                         return 'light';
                 }
@@ -200,10 +200,10 @@
 
                             <x-slot name="content">
                                 <!-- Account Management -->
-                                <x-dropdown-link href="{{ route('login') }}">
+                                <x-dropdown-link href="{{ route('login') }}" wire:navigate>
                                     {{ __('Log in') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link href="{{ route('register') }}">
+                                <x-dropdown-link href="{{ route('register') }}" wire:navigate>
                                     {{ __('Register') }}
                                 </x-dropdown-link>
                             </x-slot>
