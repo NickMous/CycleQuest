@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-bg dark:bg-dm-bg border-b border-gray-300 dark:border-dm-bg-600 sticky top-0">
+<nav x-data="{ open: false }" class="bg-bg dark:bg-dm-bg border-b border-gray-300 dark:border-dm-bg-600 sticky top-0 z-20">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -17,7 +17,7 @@
                     </x-nav-link>
                     @if(Auth::check())
                         <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
+                            {{ __('navigation.dashboard') }}
                         </x-nav-link>
                     @endif
                 </div>
@@ -100,17 +100,17 @@
                                     <div class="w-60">
                                         <!-- Team Management -->
                                         <div class="block px-4 py-2 text-xs text-text-600 dark:text-dm-text-300">
-                                            {{ __('Manage Team') }}
+                                            {{ __('navigation.manage_team') }}
                                         </div>
 
                                         <!-- Team Settings -->
                                         <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
-                                            {{ __('Team Settings') }}
+                                            {{ __('navigation.team_settings') }}
                                         </x-dropdown-link>
 
                                         @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                                             <x-dropdown-link href="{{ route('teams.create') }}">
-                                                {{ __('Create New Team') }}
+                                                {{ __('navigation.create_new_team') }}
                                             </x-dropdown-link>
                                         @endcan
 
@@ -119,7 +119,7 @@
                                             <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
                                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                                {{ __('Switch Teams') }}
+                                                {{ __('navigation.switch_teams') }}
                                             </div>
 
                                             @foreach (Auth::user()->allTeams() as $team)
@@ -156,16 +156,16 @@
                             <x-slot name="content">
                                 <!-- Account Management -->
                                 <div class="block px-4 py-2 text-xs text-text-600 dark:text-dm-text-300">
-                                    {{ __('Manage Account') }}
+                                    {{ __('navigation.manage_account') }}
                                 </div>
 
                                 <x-dropdown-link href="{{ route('profile.show') }}">
-                                    {{ __('Profile') }}
+                                    {{ __('navigation.profile') }}
                                 </x-dropdown-link>
 
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                     <x-dropdown-link href="{{ route('api-tokens.index') }}">
-                                        {{ __('API Tokens') }}
+                                        {{ __('navigation.api_tokens') }}
                                     </x-dropdown-link>
                                 @endif
 
@@ -177,7 +177,7 @@
 
                                     <x-dropdown-link href="{{ route('logout') }}"
                                                      @click.prevent="$root.submit();">
-                                        {{ __('Log Out') }}
+                                        {{ __('navigation.logout') }}
                                     </x-dropdown-link>
                                 </form>
                             </x-slot>
@@ -189,7 +189,7 @@
                             <x-slot name="trigger">
                                     <span class="inline-flex rounded-md">
                                     <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-text dark:text-dm-text bg-pr/20 dark:bg-dm-pr/20 hover:text-text-700 dark:hover:text-dm-text-300 focus:outline-none focus:bg-pr/60 dark:focus:bg-pr/60 active:bg-pr/50 dark:active:bg-dm-pr/50 transition ease-in-out duration-150">
-                                        {{ __('Guest') }}
+                                        {{ __('navigation.guest') }}
 
                                         <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
@@ -201,10 +201,10 @@
                             <x-slot name="content">
                                 <!-- Account Management -->
                                 <x-dropdown-link href="{{ route('login') }}" wire:navigate>
-                                    {{ __('Log in') }}
+                                    {{ __('navigation.login') }}
                                 </x-dropdown-link>
                                 <x-dropdown-link href="{{ route('register') }}" wire:navigate>
-                                    {{ __('Register') }}
+                                    {{ __('navigation.register') }}
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>
@@ -240,7 +240,7 @@
             </x-responsive-nav-link>
             @if(Auth::check())
                 <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
+                    {{ __('navigation.dashboard') }}
                 </x-responsive-nav-link>
             @endif
         </div>
@@ -264,12 +264,12 @@
                 <div class="mt-3 space-y-1">
                     <!-- Account Management -->
                     <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                        {{ __('Profile') }}
+                        {{ __('navigation.profile') }}
                     </x-responsive-nav-link>
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                         <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
-                            {{ __('API Tokens') }}
+                            {{ __('navigation.api_tokens') }}
                         </x-responsive-nav-link>
                     @endif
 
@@ -279,7 +279,7 @@
 
                         <x-responsive-nav-link href="{{ route('logout') }}"
                                                @click.prevent="$root.submit();">
-                            {{ __('Log Out') }}
+                            {{ __('navigation.logout') }}
                         </x-responsive-nav-link>
                     </form>
 
@@ -288,17 +288,17 @@
                         <div class="border-t border-gray-300/50 dark:border-dm-bg-600/60"></div>
 
                         <div class="block px-4 py-2 text-xs text-text-600 dark:text-dm-text-300/50">
-                            {{ __('Manage Team') }}
+                            {{ __('navigation.manage_team') }}
                         </div>
 
                     <!-- Team Settings -->
                         <x-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" :active="request()->routeIs('teams.show')">
-                            {{ __('Team Settings') }}
+                            {{ __('navigation.team_settings') }}
                         </x-responsive-nav-link>
 
                         @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
                             <x-responsive-nav-link href="{{ route('teams.create') }}" :active="request()->routeIs('teams.create')">
-                                {{ __('Create New Team') }}
+                                {{ __('navigation.create_new_team') }}
                             </x-responsive-nav-link>
                         @endcan
 
@@ -307,7 +307,7 @@
                             <div class="border-t border-gray-300/50 dark:border-dm-bg-600/60"></div>
 
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Switch Teams') }}
+                                {{ __('navigation.switch_teams') }}
                             </div>
 
                             @foreach (Auth::user()->allTeams() as $team)
@@ -323,10 +323,10 @@
                 <div class="space-y-1">
                     <!-- Account Management -->
                     <x-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
-                        {{ __('Log in') }}
+                        {{ __('navigation.login') }}
                     </x-responsive-nav-link>
                     <x-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
-                        {{ __('Register') }}
+                        {{ __('navigation.register') }}
                     </x-responsive-nav-link>
                 </div>
             </div>
