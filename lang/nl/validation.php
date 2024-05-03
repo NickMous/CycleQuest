@@ -33,7 +33,7 @@ return [
     ],
     'boolean' => 'Het :attribute veld moet true of false zijn.',
     'can' => 'Het :attribute veld bevat een ongeautoriseerde waarde.',
-    'confirmed' => 'Het :attribute bevestiging komt niet overeen.',
+    'confirmed' => 'De :attribute bevestiging komt niet overeen.',
     'current_password' => 'Het wachtwoord is incorrect.',
     'date' => 'Het :attribute is geen geldige datum.',
     'date_equals' => 'Het :attribute moet een datum zijn gelijk aan :date.',
@@ -186,6 +186,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'password' => 'wachtwoord',
+        'email' => 'e-mailadres',
+        'name' => 'naam',
+        'current_password' => 'huidig wachtwoord',
+        'new_password' => 'nieuw wachtwoord',
+        'confirm_password' => 'bevestig wachtwoord',
+    ],
 
 ];

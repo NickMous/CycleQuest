@@ -1,11 +1,11 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+            <h1 class="text-4xl text-text dark:text-dm-text">{{ __('auth.uhoh') }}</h1>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('auth.forgot_password_text') }}
         </div>
 
         @if (session('status'))
@@ -19,11 +19,11 @@
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
 
-            <x-input-group id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" :label="__('Email')" />
+            <x-input-group id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" :label="__('auth.email')" />
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
-                    {{ __('Email Password Reset Link') }}
+                    {{ __('auth.email_password_reset_link') }}
                 </x-button>
             </div>
         </form>
