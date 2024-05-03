@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'dashboard' => 'Dashboard',
-    'manage_account' => 'Account beheren',
-    'profile' => 'Profiel',
     'api_tokens' => 'API Tokens',
-    'logout' => 'Uitloggen',
-    'guest' => 'Gast',
-    'manage_team' => 'Team beheren',
-    'team_settings' => 'Team instellingen',
     'create_new_team' => 'Nieuw team aanmaken',
-    'switch_teams' => 'Teams wisselen',
+    'dashboard' => 'Dashboard',
+    'guest' => 'Gast',
     'login' => 'Inloggen',
+    'logout' => 'Uitloggen',
+    'manage_account' => 'Account beheren',
+    'manage_team' => 'Team beheren',
+    'profile' => 'Profiel',
     'register' => 'Registreren',
+    'switch_teams' => 'Teams wisselen',
+    'team_settings' => 'Team instellingen',
 ];
