@@ -25,6 +25,17 @@
     @livewireStyles
     <!-- googlefonts -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="76x76" href="/storage/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/storage/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/storage/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/storage/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/storage/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/storage/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/storage/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body class="bg-bg dark:bg-dm-bg transition-colors min-h-screen">
 <div class="absolute min-w-full">
