@@ -15,6 +15,7 @@
       }"
       x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
       x-bind:class="{'dark': darkMode === 'dark' || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}"
+      class="h-full"
 >
 <head>
     <meta charset="utf-8">
@@ -35,9 +36,9 @@
     <!-- googlefonts -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
-<body class="bg-bg dark:bg-dm-bg transition-colors">
+<body class="bg-bg dark:bg-dm-bg transition-colors min-h-screen">
 <livewire:navigation-menu/>
-<div class="font-sans text-gray-900 dark:text-gray-100 antialiased">
+<div class="font-sans text-gray-900 dark:text-gray-100 antialiased h-full">
     {{ $slot }}
 </div>
 @livewireScripts
