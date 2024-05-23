@@ -22,37 +22,37 @@
                         </x-nav-link>
                     @endif
 
-                        <x-nav-dropdown align="center" outer-div-classes="h-full" trigger-div-classes="h-full">
-                            <x-slot name="trigger">
-                                <span class="inline-flex h-full">
-                                    <button type="button"
-                                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-text/50 dark:text-dm-text/50 hover:text-text dark:hover:text-dm-text hover:border-ac dark:hover:border-dm-ac focus:outline-none focus:text-text dark:focus:text-dm-text focus:border-pr dark:focus:border-dm-pr transition duration-150 ease-in-out">
-                                        {{ __('navigation.route.main') }}
+{{--                        <x-nav-dropdown align="center" outer-div-classes="h-full" trigger-div-classes="h-full">--}}
+{{--                            <x-slot name="trigger">--}}
+{{--                                <span class="inline-flex h-full">--}}
+{{--                                    <button type="button"--}}
+{{--                                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-text/50 dark:text-dm-text/50 hover:text-text dark:hover:text-dm-text hover:border-ac dark:hover:border-dm-ac focus:outline-none focus:text-text dark:focus:text-dm-text focus:border-pr dark:focus:border-dm-pr transition duration-150 ease-in-out">--}}
+{{--                                        {{ __('navigation.route.main') }}--}}
 
-                                        <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                  d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"/>
-                                        </svg>
-                                    </button>
-                                </span>
-                            </x-slot>
-                            <x-slot name="content">
-                                <div class="w-60">
-                                    <!-- Team Management -->
-                                    <div class="block px-4 py-2 text-xs text-text-600 dark:text-dm-text-300">
-                                        {{ __('navigation.route.manage') }}
-                                    </div>
+{{--                                        <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"--}}
+{{--                                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">--}}
+{{--                                            <path stroke-linecap="round" stroke-linejoin="round"--}}
+{{--                                                  d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"/>--}}
+{{--                                        </svg>--}}
+{{--                                    </button>--}}
+{{--                                </span>--}}
+{{--                            </x-slot>--}}
+{{--                            <x-slot name="content">--}}
+{{--                                <div class="w-60">--}}
+{{--                                    <!-- Team Management -->--}}
+{{--                                    <div class="block px-4 py-2 text-xs text-text-600 dark:text-dm-text-300">--}}
+{{--                                        {{ __('navigation.route.manage') }}--}}
+{{--                                    </div>--}}
 
-                                    <!-- Team Settings -->
-                                    @can('create routes')
-                                        <x-dropdown-link href="{{ route('route.create') }}">
-                                            {{ __('navigation.route.create') }}
-                                        </x-dropdown-link>
-                                    @endcan
-                                </div>
-                            </x-slot>
-                        </x-nav-dropdown>
+{{--                                    <!-- Team Settings -->--}}
+{{--                                    @can('create routes')--}}
+{{--                                        <x-dropdown-link href="{{ route('route.create') }}">--}}
+{{--                                            {{ __('navigation.route.create') }}--}}
+{{--                                        </x-dropdown-link>--}}
+{{--                                    @endcan--}}
+{{--                                </div>--}}
+{{--                            </x-slot>--}}
+{{--                        </x-nav-dropdown>--}}
                 </div>
             </div>
 
