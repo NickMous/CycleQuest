@@ -13,6 +13,7 @@
         "larswiegers/laravel-translations-checker": "^0.9.1",
         "livewire/livewire": "^3.4.12",
         "predis/predis": "^2.2.2",
+        "ralphjsmit/laravel-seo": "^1.5",
         "sentry/sentry-laravel": "^4.5.1",
         "spatie/laravel-google-fonts": "^1.4.1",
         "spatie/laravel-permission": "^6.7"

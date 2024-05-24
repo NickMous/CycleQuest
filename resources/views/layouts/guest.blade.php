@@ -1,3 +1,12 @@
+@php
+    use RalphJSmit\Laravel\SEO\Support\SEOData;
+    if (!isset($seo)) {
+        $title = $title ?? 'No Title';
+        $title .= ' | ' . __('app.name');
+        $seo = $seo ?? seo(new SEOData(title: $title));
+    }
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
       x-data="{
@@ -12,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+{{--    <title>{{ config('app.name', 'Laravel') }}</title>--}}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -36,6 +45,9 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/storage/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- SEO -->
+    {!! $seo !!}
 </head>
 <body class="bg-bg dark:bg-dm-bg transition-colors min-h-screen">
 <div class="absolute min-w-full">
