@@ -77,7 +77,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Fortify Routes Prefix / Subdomain
+    | Fortify Route Prefix / Subdomain
     |--------------------------------------------------------------------------
     |
     | Here you may specify which prefix Fortify will assign to all the routes
@@ -92,7 +92,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Fortify Routes Middleware
+    | Fortify Route Middleware
     |--------------------------------------------------------------------------
     |
     | Here you may specify which middleware Fortify will assign to the routes
@@ -121,7 +121,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Register View Routes
+    | Register View Route
     |--------------------------------------------------------------------------
     |
     | Here you may specify if the routes returning views should be disabled as
