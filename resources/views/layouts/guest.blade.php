@@ -48,6 +48,12 @@
 
     <!-- SEO -->
     {!! $seo !!}
+
+    <!-- Sentry Replay SDK -->
+    <script
+        src="https://sentry.nickmous.com/js-sdk-loader/e15ea04fb08981a8e29fafdb4f2378d3.min.js"
+        crossorigin="anonymous"
+    ></script>
 </head>
 <body class="bg-bg dark:bg-dm-bg transition-colors min-h-screen">
 <div class="absolute min-w-full">
