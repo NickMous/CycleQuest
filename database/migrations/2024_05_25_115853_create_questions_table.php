@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('checkpoint_id')->constrained()->cascadeOnDelete();
             $table->text('question');
-            $table->enum('type', ['text', 'radio', 'checkbox']);
+            $table->enum('type', ['multiple_choice', 'true_or_false', 'short_answer']);
             $table->integer('order')->default(0);
             $table->timestamps();
         });
