@@ -51,7 +51,7 @@
 
     <!-- Sentry Replay SDK -->
     <script
-        src="https://sentry.nickmous.com/js-sdk-loader/e15ea04fb08981a8e29fafdb4f2378d3.min.js"
+        src="https://sentry.nickmous.com/js-sdk-loader/902155d7344fe42d9d6d6ab8d0096851.min.js"
         crossorigin="anonymous"
     ></script>
 </head>
