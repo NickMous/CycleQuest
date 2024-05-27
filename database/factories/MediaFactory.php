@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Checkpoint;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class MediaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'url' => $this->faker->imageUrl(),
+            'type' => 'image',
+            'mediable_type' => 'App\Models\Checkpoint',
+            'mediable_id' => Checkpoint::all()->random()->id,
         ];
     }
 }

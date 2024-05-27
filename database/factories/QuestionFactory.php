@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Checkpoint;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class QuestionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'checkpoint_id' => Checkpoint::all()->random()->id,
+            'question' => $this->faker->sentence(10),
+            'type' => $this->faker->randomElement(['text', 'radio', 'checkbox']),
+            'order' => 0,
         ];
     }
 }
