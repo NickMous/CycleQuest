@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('route_id')->constrained()->cascadeOnDelete();
             $table->integer('progress')->default(0);
-            $table->foreignId('location_id')->nullable()->constrained()->nullOnDelete();
+            $table->foreignId('checkpoint_id')->nullable()->constrained()->nullOnDelete();
             $table->foreignId('question_id')->nullable()->constrained()->nullOnDelete();
             $table->integer('score')->default(0);
             $table->timestamp('started_at')->nullable();
