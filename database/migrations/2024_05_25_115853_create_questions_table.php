@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('location_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('checkpoint_id')->constrained()->cascadeOnDelete();
             $table->string('question');
             $table->enum('type', ['text', 'radio', 'checkbox']);
             $table->integer('order')->default(0);
