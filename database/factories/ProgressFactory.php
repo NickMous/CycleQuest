@@ -25,7 +25,7 @@ class ProgressFactory extends Factory
             'progress' => $this->faker->randomFloat(2, 0, $route->length),
             'checkpoint_id' => $route->checkpoints->random()->id,
             'started_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
-            'finished_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'completed_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ];
     }
 }
