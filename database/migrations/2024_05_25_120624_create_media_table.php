@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('media', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('route_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('location_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('question_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('answer_id')->constrained()->cascadeOnDelete();
             $table->string('url');
             $table->enum('type', ['image', 'video', 'audio']);
             $table->string('alt')->nullable();
+            $table->integer('mediable_id');
+            $table->string('mediable_type');
             $table->timestamps();
         });
     }
