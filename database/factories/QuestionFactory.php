@@ -20,7 +20,7 @@ class QuestionFactory extends Factory
         return [
             'checkpoint_id' => Checkpoint::all()->random()->id,
             'question' => $this->faker->sentence(10),
-            'type' => $this->faker->randomElement(['text', 'radio', 'checkbox']),
+            'type' => $this->faker->randomElement(['multiple_choice', 'true_or_false', 'short_answer']),
             'order' => 0,
         ];
     }
