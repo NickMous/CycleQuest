@@ -13,7 +13,7 @@ class Progress extends Model
         'user_id',
         'route_id',
         'progress',
-        'location_id',
+        'checkpoint_id',
         'question_id',
         'score',
         'started_at',
@@ -32,6 +32,13 @@ class Progress extends Model
 
     public function checkpoint()
     {
-        return $this->has(Checkpoint::class);
+        // not has??
+        return $this->belongsTo(Checkpoint::class);
+    }
+
+    public function question()
+    {
+        // not has?
+        return $this->belongsTo(Question::class);
     }
 }
