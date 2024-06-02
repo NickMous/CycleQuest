@@ -9,6 +9,7 @@
         "laravel/framework": "^11.6",
         "laravel/jetstream": "^5.0.5",
         "laravel/sanctum": "^4.0.2",
+        "laravel/telescope": "^5.0",
         "laravel/tinker": "^2.9",
         "larswiegers/laravel-translations-checker": "^0.9.1",
         "livewire/livewire": "^3.4.12",
