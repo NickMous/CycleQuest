@@ -35,6 +35,8 @@ class SeedRoles extends Command
         $travelRoutes = Permission::create(['name' => 'travel routes']);
         $travelRoutes->assignRole($user);
 
+        $manageHealthChecks = Permission::create(['name' => 'manage health checks']);
+
         $this->info('Roles and permissions seeded successfully!');
     }
 }
