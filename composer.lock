@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "054240a190ed7d9abef245639c6f2e07",
+    "content-hash": "29566b5f42bca43108a0d7ee0a919f54",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -188,6 +188,87 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "composer/semver",
+            "version": "3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/semver.git",
+                "reference": "35e8d0af4486141bc745f23a29cc2091eb624a32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/semver/zipball/35e8d0af4486141bc745f23a29cc2091eb624a32",
+                "reference": "35e8d0af4486141bc745f23a29cc2091eb624a32",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.4",
+                "symfony/phpunit-bridge": "^4.2 || ^5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Semver\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                },
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com",
+                    "homepage": "http://robbast.nl"
+                }
+            ],
+            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "keywords": [
+                "semantic",
+                "semver",
+                "validation",
+                "versioning"
+            ],
+            "support": {
+                "irc": "ircs://irc.libera.chat:6697/composer",
+                "issues": "https://github.com/composer/semver/issues",
+                "source": "https://github.com/composer/semver/tree/3.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-08-31T09:50:34+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -4977,6 +5058,81 @@
             "time": "2024-02-15T10:50:21+00:00"
         },
         {
+            "name": "spatie/packagist-api",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/packagist-api.git",
+                "reference": "4d125fec1c937ba8485a5b7e026532508314fc32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/packagist-api/zipball/4d125fec1c937ba8485a5b7e026532508314fc32",
+                "reference": "4d125fec1c937ba8485a5b7e026532508314fc32",
+                "shasum": ""
+            },
+            "require": {
+                "composer/semver": "^1.0|^2.0|^3.0",
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.0",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.4",
+                "spatie/phpunit-snapshot-assertions": "^4.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Packagist\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jolita Grazyte",
+                    "email": "jolita@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Mark Walet",
+                    "homepage": "https://markwalet.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fetch package info from Packagist",
+            "homepage": "https://github.com/spatie/packagist-api",
+            "keywords": [
+                "api",
+                "packagist",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/packagist-api/tree/2.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-08-01T10:13:17+00:00"
+        },
+        {
             "name": "spatie/regex",
             "version": "3.1.1",
             "source": {
@@ -5098,6 +5254,68 @@
                 }
             ],
             "time": "2024-04-22T14:28:40+00:00"
+        },
+        {
+            "name": "spatie/security-advisories-health-check",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/security-advisories-health-check.git",
+                "reference": "7ecf025a0e9456f932f42339e21566763346aaf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/security-advisories-health-check/zipball/7ecf025a0e9456f932f42339e21566763346aaf8",
+                "reference": "7ecf025a0e9456f932f42339e21566763346aaf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0",
+                "spatie/packagist-api": "^2.1"
+            },
+            "require-dev": {
+                "nunomaduro/collision": "^6.1|^7.0|^8.0",
+                "pestphp/pest": "^1.21|^2.3",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5.10|^10.5",
+                "spatie/laravel-health": "^1.12.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\SecurityAdvisoriesHealthCheck\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel Health check to security advisories for PHP packages",
+            "homepage": "https://github.com/spatie/security-advisories-health-check",
+            "keywords": [
+                "laravel",
+                "security-advisories-health-check",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/security-advisories-health-check/tree/1.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-18T08:17:00+00:00"
         },
         {
             "name": "spatie/temporary-directory",
