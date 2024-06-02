@@ -10,10 +10,8 @@ class Media extends Model
     use HasFactory;
 
     protected $fillable = [
-        'route_id',
-        'location_id',
-        'question_id',
-        'answer_id',
+        'mediable_id',
+        'mediable_type',
         'url',
         'type',
         'alt'
