@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('url');
             $table->enum('type', ['image', 'video', 'audio']);
             $table->string('alt')->nullable();
-            $table->integer('mediable_id');
+            $table->unsignedBigInteger('mediable_id');
             $table->string('mediable_type');
             $table->timestamps();
         });
