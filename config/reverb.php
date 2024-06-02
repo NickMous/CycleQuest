@@ -71,6 +71,7 @@ return [
 
         'apps' => [
             [
+                'id' => 'server',
                 'key' => env('REVERB_APP_KEY'),
                 'secret' => env('REVERB_APP_SECRET'),
                 'app_id' => env('REVERB_APP_ID'),
@@ -85,6 +86,7 @@ return [
                 'max_message_size' => env('REVERB_APP_MAX_MESSAGE_SIZE', 10_000),
             ],
             [
+                'id' => 'local',
                 'key' => env('LOCAL_REVERB_APP_KEY'),
                 'secret' => env('LOCAL_REVERB_APP_SECRET'),
                 'app_id' => env('LOCAL_REVERB_APP_ID'),
