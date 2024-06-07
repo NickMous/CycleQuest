@@ -15,7 +15,7 @@ web_environment: []
 corepack_enable: false
 web_extra_daemons:
   - name: "task-scheduler"
-    command: "php artisan schedule:run"
+    command: "php artisan schedule:work"
     directory: /var/www/html
   - name: "queue-worker"
     command: "php artisan queue:work"
