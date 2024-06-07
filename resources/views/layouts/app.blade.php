@@ -54,6 +54,16 @@
             src="https://sentry.nickmous.com/js-sdk-loader/902155d7344fe42d9d6d6ab8d0096851.min.js"
             crossorigin="anonymous"
         ></script>
+
+        <!-- User id for notifications -->
+        @auth
+            <script>
+                window.user = @json(auth()->user());
+            </script>
+        @endauth
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/c76ccd3424.js" crossorigin="anonymous"></script>
     </head>
     <body class="font-sans antialiased">
         <x-banner />
