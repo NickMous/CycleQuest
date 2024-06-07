@@ -1,7 +1,7 @@
 let notificationQueue = [];
 let notificationRunning = false;
 if (user) {
-    Echo.private('App.Models.User.' + user)
+    Echo.private('App.Models.User.' + user.id)
         .notification((notification) => {
             showNotification(notification);
         });
@@ -27,18 +27,18 @@ function showNextNotification() {
     let notification = notificationQueue[0];
     notificationButton.href = notification.url;
     if (notification.status == 'success') {
-        notificationButton.classList.add('dark:bg-dm-aquamarine', 'dark:hover:bg-dm-dark_green-700', 'bg-sea_green', 'hover:bg-mint_green-300');
+        notificationButton.classList.add('bg-pr', 'hover:bg-pr/20', 'dark:bg-dm-pr', 'dark:hover:bg-dm-pr/20');
     } else if (notification.status == 'error') {
         notificationButton.classList.add('dark:bg-dm-red', 'dark:hover:bg-dm-dark_red', 'bg-red', 'hover:bg-red-300');
     } else {
-        notificationButton.classList.add('dark:bg-dm-dark_green', 'dark:hover:bg-dm-dark_green', 'bg-mint_green', 'hover:bg-mint_green');
+        notificationButton.classList.add('bg-pr', 'hover:bg-pr/20', 'dark:bg-dm-pr', 'dark:hover:bg-dm-pr/20');
     }
-    notificationButton.classList.remove('dark:bg-dm-dark_green', 'dark:hover:bg-dm-dark_green', 'bg-mint_green', 'hover:bg-mint_green');
+    notificationButton.classList.remove('bg-pr/20', 'dark:bg-dm-pr/20');
     notificationIconDiv.classList.add('top-10');
     let notificationStep2 = setTimeout(() => {
         notificationInnerDiv.classList.add('w-72');
         notificationInnerDiv.classList.remove('w-6');
-        notificationIcon.classList = notification.icon + ' me-2 dark:text-dm-dark_green-600';
+        notificationIcon.classList = notification.icon + ' me-2 dark:text-white text-white';
         clearTimeout(notificationStep2);
         let notificationStep3 = setTimeout(() => {
             notificationText.innerText = notification.title;
@@ -61,15 +61,15 @@ function showNextNotification() {
                     clearTimeout(notificationStep5);
                     let notificationStep6 = setTimeout(() => {
                         notificationIconDiv.classList.remove('top-10');
-                        notificationButton.classList.add('dark:bg-dm-dark_green', 'dark:hover:bg-dm-dark_green', 'bg-mint_green', 'hover:bg-mint_green');
+                        notificationButton.classList.add('bg-pr/20', 'dark:bg-dm-pr/20');
                         if (notification.status == 'success') {
-                            notificationButton.classList.remove('dark:bg-dm-aquamarine', 'dark:hover:bg-dm-dark_green-700', 'bg-sea_green', 'hover:bg-mint_green-300');
+                            notificationButton.classList.remove('bg-pr', 'hover:bg-pr/20', 'dark:bg-dm-pr', 'dark:hover:bg-dm-pr/20');
                         } else if (notification.status == 'error') {
                             notificationButton.classList.remove('dark:bg-dm-red', 'dark:hover:bg-dm-dark_red', 'bg-red', 'hover:bg-red-300');
                         } else {
-                            notificationButton.classList.remove('dark:bg-dm-dark_green', 'dark:hover:bg-dm-dark_green', 'bg-mint_green', 'hover:bg-mint_green');
+                            notificationButton.classList.remove('bg-pr', 'hover:bg-pr/20', 'dark:bg-dm-pr', 'dark:hover:bg-dm-pr/20');
                         }
-                        notificationButton.classList.remove('dark:bg-dm-aquamarine', 'dark:hover:bg-dm-dark_green-700', 'bg-sea_green', 'hover:bg-mint_green-300');
+                        // notificationButton.classList.remove('dark:bg-dm-aquamarine', 'dark:hover:bg-dm-dark_green-700', 'bg-sea_green', 'hover:bg-mint_green-300');
                         notificationButton.href = href;
                         notificationQueue.shift();
                         if (notificationQueue.length > 0) {
