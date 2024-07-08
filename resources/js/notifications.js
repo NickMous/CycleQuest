@@ -1,6 +1,6 @@
 let notificationQueue = [];
 let notificationRunning = false;
-if (user) {
+if (typeof user !== 'undefined') {
     Echo.private('App.Models.User.' + user.id)
         .notification((notification) => {
             showNotification(notification);

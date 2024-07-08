@@ -2,6 +2,8 @@
 
 use App\Livewire\Home;
 use App\Livewire\Misc\UnderConstruction;
+use App\Livewire\Notifications;
+use App\Livewire\Notifications\Index;
 use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
@@ -20,7 +22,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::prefix('notifications')->name('notifications.')->group(function () {
-        Route::get('', UnderConstruction::class)->name('index');
+        Route::get('', Notifications\Index::class)->name('index');
     });
 });
 
