@@ -19,6 +19,7 @@ class ProgressFactory extends Factory
     public function definition(): array
     {
         $route = Route::all()->random();
+
         return [
             'user_id' => User::all()->random()->id,
             'route_id' => $route->id,

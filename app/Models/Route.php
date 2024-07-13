@@ -23,7 +23,7 @@ class Route extends Model
         'user_id',
         'available_at',
         'unavailable_at',
-        'is_public'
+        'is_public',
     ];
 
     public function user()

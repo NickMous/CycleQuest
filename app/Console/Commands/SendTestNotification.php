@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Notifications\TestNotification;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\PromptsForMissingInput;
-use Illuminate\Support\Facades\Notification;
+
 use function Laravel\Prompts\search;
 
 class SendTestNotification extends Command implements PromptsForMissingInput

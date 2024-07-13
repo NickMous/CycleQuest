@@ -20,7 +20,7 @@ test('routes can get their checkpoints', function () {
 });
 
 test('routes can get their checkpoints in order', function () {
-User::factory()->create();
+    User::factory()->create();
     $route = Route::factory()->create();
     $checkpoint1 = Checkpoint::factory()->create(['route_id' => $route->id, 'name' => 'Checkpoint 1', 'order' => 1]);
     $checkpoint2 = Checkpoint::factory()->create(['route_id' => $route->id, 'name' => 'Checkpoint 2', 'order' => 2]);

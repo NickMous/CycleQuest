@@ -1,5 +1,6 @@
 <?php
- return [
-  'title' => 'Home',
-     'coming_soon' => 'Binnenkort...',
+
+return [
+    'title' => 'Home',
+    'coming_soon' => 'Binnenkort...',
 ];

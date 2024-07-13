@@ -9,7 +9,6 @@ use App\Models\Progress;
 use App\Models\Question;
 use App\Models\Route;
 use App\Models\User;
-
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -56,10 +55,14 @@ class DatabaseSeeder extends Seeder
                     $true = rand(0, 3);
                     for ($j = 0; $j < rand(3, 5); $j++) {
                         $correct = false;
-                        if ((bool) $true) $correct = (bool) rand(0, 1);
-                        if ($correct) $true -= 1;
+                        if ((bool) $true) {
+                            $correct = (bool) rand(0, 1);
+                        }
+                        if ($correct) {
+                            $true -= 1;
+                        }
                         $question->answers()->create([
-                            'answer' => fake()->sentence(6) . ($correct ? ' (correct)' : ''),
+                            'answer' => fake()->sentence(6).($correct ? ' (correct)' : ''),
                             'is_correct' => $correct,
                         ]);
                     }

@@ -17,10 +17,10 @@ class User extends Authenticatable
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
+    use HasRoles;
     use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
-    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -72,7 +72,8 @@ class User extends Authenticatable
         return $this->hasMany(Route::class);
     }
 
-    public function progress() {
+    public function progress()
+    {
         return $this->hasMany(Progress::class);
     }
 }
