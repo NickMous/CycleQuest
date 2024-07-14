@@ -4,6 +4,7 @@ if (typeof user !== 'undefined') {
     Echo.private('App.Models.User.' + user.id)
         .notification((notification) => {
             showNotification(notification);
+            dispatchEvent(new CustomEvent('notificationReceived', {detail: notification}));
         });
 }
 
