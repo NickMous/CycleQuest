@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Notifications;
 
-use Illuminate\Notifications\Events\NotificationSent;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Title;
 use Livewire\Component;
