@@ -18,6 +18,7 @@ class CheckpointFactory extends Factory
     public function definition(): array
     {
         $address = $this->faker->address;
+
         return [
             'name' => $address,
             'description' => $this->faker->sentence(30),

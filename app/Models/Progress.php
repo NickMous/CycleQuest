@@ -17,7 +17,7 @@ class Progress extends Model
         'question_id',
         'score',
         'started_at',
-        'completed_at'
+        'completed_at',
     ];
 
     public function user()

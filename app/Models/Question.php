@@ -13,7 +13,7 @@ class Question extends Model
         'question',
         'location_id',
         'type',
-        'order'
+        'order',
     ];
 
     public function checkpoint()

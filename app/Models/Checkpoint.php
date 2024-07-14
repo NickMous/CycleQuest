@@ -16,7 +16,7 @@ class Checkpoint extends Model
         'order',
         'latitude',
         'longitude',
-        'address'
+        'address',
     ];
 
     public function route()

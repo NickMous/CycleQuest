@@ -54,6 +54,16 @@
             src="https://sentry.nickmous.com/js-sdk-loader/902155d7344fe42d9d6d6ab8d0096851.min.js"
             crossorigin="anonymous"
         ></script>
+
+        <!-- User id for notifications -->
+        @auth
+            <script>
+                window.user = @json(auth()->user());
+            </script>
+        @endauth
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/c76ccd3424.js" crossorigin="anonymous"></script>
     </head>
     <body class="font-sans antialiased">
         <x-banner />
@@ -63,15 +73,15 @@
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-pr dark:bg-dm-bg-600 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <header class="shadow bg-pr dark:bg-dm-bg-600">
+                    <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="h-screen">
                 {{ $slot }}
             </main>
         </div>

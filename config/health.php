@@ -7,12 +7,11 @@ return [
      * can use multiple stores at the same time.
      */
     'result_stores' => [
-//        Spatie\Health\ResultStores\EloquentHealthResultStore::class => [
-//            'connection' => env('HEALTH_DB_CONNECTION', env('DB_CONNECTION')),
-//            'model' => Spatie\Health\Models\HealthCheckResultHistoryItem::class,
-//            'keep_history_for_days' => 5,
-//        ],
-
+        //        Spatie\Health\ResultStores\EloquentHealthResultStore::class => [
+        //            'connection' => env('HEALTH_DB_CONNECTION', env('DB_CONNECTION')),
+        //            'model' => Spatie\Health\Models\HealthCheckResultHistoryItem::class,
+        //            'keep_history_for_days' => 5,
+        //        ],
 
         Spatie\Health\ResultStores\CacheHealthResultStore::class => [
             'store' => 'file',
@@ -39,7 +38,7 @@ return [
         'enabled' => true,
 
         'notifications' => [
-//            Spatie\Health\Notifications\CheckFailedNotification::class => ['mail'],
+            //            Spatie\Health\Notifications\CheckFailedNotification::class => ['mail'],
             Spatie\Health\Notifications\CheckFailedNotification::class => [],
         ],
 

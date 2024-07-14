@@ -113,6 +113,27 @@
                     </div>
                 </button>
 
+                @if(Auth::check())
+                    <!-- this div is only for the class to exist in the css file, so we can use the transition -->
+                    <div class="hidden w-72"></div>
+                    <a href="{{ route('notifications.index') }}" id="notificationButton" class="inline-flex items-center overflow-hidden ms-3 px-2 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-text dark:text-dm-text bg-pr/20 dark:bg-dm-pr/20 hover:text-text-700 dark:hover:text-dm-text-300 focus:outline-none focus:bg-pr/60 dark:focus:bg-dm-pr/60 active:bg-pr/50 dark:active:bg-dm-pr/50 transition ease-in-out duration-500" wire:navigate>
+                        <div id="notificationInnerDiv" class="h-6 w-6 flex items-center justify-center relative transition-[width]">
+                            <div id="notificationIconDiv" class="flex items-center justify-center w-6 h-6 absolute top-0 transition-top duration-500">
+                                @if(auth()->user()->notifications()->unread()->count() > 0)
+                                    <i class="fa-regular fa-bell !hidden notificationEmpty hover:text-text-700 dark:hover:text-dm-text-300"></i>
+                                    <i class="fa-solid fa-bell notificationFull hover:text-text-700 dark:hover:text-dm-text-300"></i>
+                                @else
+                                    <i class="fa-regular fa-bell notificationEmpty hover:text-text-700 dark:hover:text-dm-text-300"></i>
+                                    <i class="fa-solid fa-bell !hidden notificationFull hover:text-text-700 dark:hover:text-dm-text-300"></i>
+                                @endif
+                            </div>
+                            <div id="notificationTextDiv" class="flex items-center justify-center h-6 absolute top-8 transition-top hidden">
+                                <i></i><p class="dark:text-dm-dark_green-600 truncate">This is just a dummy notification</p>
+                            </div>
+                        </div>
+                    </a>
+                @endif
+
                 <livewire:components.language-switcher/>
 
                 @if(Auth::check())

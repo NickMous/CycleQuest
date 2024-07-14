@@ -14,7 +14,7 @@ class Media extends Model
         'mediable_type',
         'url',
         'type',
-        'alt'
+        'alt',
     ];
 
     public function mediable()

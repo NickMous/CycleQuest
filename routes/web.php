@@ -1,12 +1,14 @@
 <?php
 
 use App\Livewire\Home;
+use App\Livewire\Notifications;
 use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
 Route::get('/', Home::class)->name('home');
 Route::get('/language/{locale}', function ($locale) {
     session()->put('locale', $locale);
+
     return redirect()->back();
 })->name('language');
 
@@ -18,6 +20,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::prefix('notifications')->name('notifications.')->group(function () {
+        Route::get('', Notifications\Index::class)->name('index');
+    });
 });
 
 Route::middleware([
