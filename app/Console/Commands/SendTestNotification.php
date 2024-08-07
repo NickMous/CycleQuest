@@ -43,7 +43,7 @@ class SendTestNotification extends Command implements PromptsForMissingInput
     {
         return [
             'user' => fn () => search('Select the user', fn ($value) => strlen($value) > 0
-                ? User::all()->pluck('name', 'id')->toArray()
+                ? User::pluck('name', 'id')->toArray()
                 : []),
             'status' => fn () => $this->choice('Select the status', ['success', 'error']),
         ];
