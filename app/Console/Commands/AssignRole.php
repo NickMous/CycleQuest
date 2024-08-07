@@ -41,7 +41,7 @@ class AssignRole extends Command implements PromptsForMissingInput
     {
         return [
             'user' => fn () => search('Select the user', fn ($value) => strlen($value) > 0
-                ? User::all()->pluck('name', 'id')->toArray()
+                ? User::pluck('name', 'id')->toArray()
                 : []),
             'role' => fn () => $this->choice('Select the role', ['admin']),
         ];

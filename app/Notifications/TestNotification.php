@@ -55,7 +55,7 @@ class TestNotification extends Notification implements ShouldQueue
                 'message' => 'This is a test notification',
                 'url' => 'https://example.com',
                 'icon' => 'fas fa-bell',
-                'status' => 'success',
+                'status' => $this->status,
             ],
         ];
     }
@@ -67,7 +67,7 @@ class TestNotification extends Notification implements ShouldQueue
             'message' => 'This is a test notification',
             'url' => 'https://example.com',
             'icon' => 'fas fa-bell',
-            'status' => 'success',
+            'status' => $this->status,
         ];
     }
 }
