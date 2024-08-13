@@ -16,7 +16,7 @@ class SendTestNotification extends Command implements PromptsForMissingInput
      *
      * @var string
      */
-    protected $signature = 'app:send-test-notification {user} {status=success}';
+    protected $signature = 'app:send-test-notification {user} {status=success} {amount=1}';
 
     /**
      * The console command description.
@@ -25,18 +25,19 @@ class SendTestNotification extends Command implements PromptsForMissingInput
      */
     protected $description = 'Send a test notification to an user';
 
-    private $user;
-
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        $this->user = User::findOrFail($this->argument('user'));
-        $this->info("Sending a test notification to user {$this->argument('user')} with status {$this->argument('status')}.");
+        $user = User::findOrFail($this->argument('user'));
+        $this->info("Sending " . $this->argument('amount') . " test notification(s) to user {$this->argument('user')} with status {$this->argument('status')}.");
         $this->info('Sleeping for 5 seconds...');
         sleep(5);
-        $this->user->notify(new TestNotification($this->argument('status')));
+        for ($i = 0; $i < $this->argument('amount'); $i++) {
+            $user->notify(new TestNotification($this->argument('status')));
+            sleep(1);
+        }
     }
 
     protected function promptForMissingArgumentsUsing()
