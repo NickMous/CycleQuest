@@ -9,6 +9,7 @@ return [
     'logout' => 'Log out',
     'manage_account' => 'Manage Account',
     'manage_team' => 'Manage Team',
+    'notifications' => 'Notifications',
     'profile' => 'Profile',
     'register' => 'Register',
     'switch_teams' => 'Switch Teams',

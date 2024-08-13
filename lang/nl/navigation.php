@@ -9,6 +9,7 @@ return [
     'logout' => 'Uitloggen',
     'manage_account' => 'Account beheren',
     'manage_team' => 'Team beheren',
+    'notifications' => 'Meldingen',
     'profile' => 'Profiel',
     'register' => 'Registreren',
     'switch_teams' => 'Teams wisselen',

@@ -15,7 +15,7 @@ class Index extends Component
     #[On('notificationReceived')]
     public function mount()
     {
-        $this->notifications = auth()->user()->notifications()->get();
+        $this->notifications = auth()->user()->notifications()->read()->get();
         $this->unread = auth()->user()->notifications()->unread()->get();
     }
 
