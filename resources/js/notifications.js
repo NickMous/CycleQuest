@@ -29,6 +29,18 @@ function showNotifications() {
     const notificationIcon = notificationTextDiv.querySelector("i");
     const href = notificationButton.href;
     const notification = notificationQueue[0];
+    const isNotificationButtonVisible = notificationButton.checkVisibility({
+        visibilityProperty: true,
+    });
+    console.log(isNotificationButtonVisible);
+    if (!isNotificationButtonVisible) {
+        notificationButton.classList.add(
+            "visible",
+            "opacity-100",
+            "absolute",
+            "top-4",
+        );
+    }
 
     notificationButton.href = notification.url;
 
@@ -77,6 +89,7 @@ function showNotifications() {
             document
                 .querySelector(".notificationFull")
                 .classList.remove("!hidden");
+            notificationQueue.shift();
 
             const notificationStep4 = setInterval(() => {
                 if (notificationQueue.length > 0) {
@@ -116,6 +129,24 @@ function showNotifications() {
                             );
                             notificationButton.href = href;
                             notificationRunning = false;
+
+                            if (!isNotificationButtonVisible) {
+                                notificationButton.ontransitionend = () => {
+                                    notificationButton.ontransitionend = null;
+                                    notificationButton.classList.remove(
+                                        "opacity-100",
+                                    );
+                                    notificationButton.ontransitionend = () => {
+                                        notificationButton.ontransitionend =
+                                            null;
+                                        notificationButton.classList.remove(
+                                            "visible",
+                                            "absolute",
+                                            "top-4",
+                                        );
+                                    };
+                                };
+                            }
                         };
                     };
                 }

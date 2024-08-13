@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="invisible sm:visible flex sm:items-center sm:ms-6 transition duration-300 ease-in-out opacity-0 sm:opacity-100">
+            <div class="invisible sm:visible flex sm:items-center sm:ms-6">
                 <button
                     class="relative inline-flex items-center overflow-hidden ms-3 px-2 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-text dark:text-dm-text bg-pr/20 dark:bg-dm-pr/20 hover:text-text-700 dark:hover:text-dm-text-300 focus:outline-none focus:bg-pr/60 dark:focus:bg-dm-pr/60 active:bg-pr/50 dark:active:bg-dm-pr/50 transition ease-in-out duration-150"
                     x-data="{ nextDarkMode: () => {
@@ -114,9 +114,7 @@
                 </button>
 
                 @if(Auth::check())
-                    <!-- this div is only for the class to exist in the css file, so we can use the transition -->
-                    <div class="hidden w-72"></div>
-                    <a href="{{ route('notifications.index') }}" id="notificationButton" class="inline-flex items-center overflow-hidden ms-3 px-2 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-text dark:text-dm-text bg-pr/20 dark:bg-dm-pr/20 hover:text-text-700 dark:hover:text-dm-text-300 focus:outline-none focus:bg-pr/60 dark:focus:bg-dm-pr/60 active:bg-pr/50 dark:active:bg-dm-pr/50 transition ease-in-out duration-500" wire:navigate>
+                    <a href="{{ route('notifications.index') }}" id="notificationButton" class="inline-flex items-center overflow-hidden ms-3 px-2 py-1 border border-transparent text-sm leading-4 font-medium rounded-md text-text dark:text-dm-text bg-pr/20 dark:bg-dm-pr/20 hover:text-text-700 dark:hover:text-dm-text-300 focus:outline-none focus:bg-pr/60 dark:focus:bg-dm-pr/60 active:bg-pr/50 dark:active:bg-dm-pr/50 transition ease-in-out duration-500 opacity-0 sm:opacity-100" wire:navigate>
                         <div id="notificationInnerDiv" class="h-6 w-6 flex items-center justify-center relative transition-[width]">
                             <div id="notificationIconDiv" class="flex items-center justify-center w-6 h-6 absolute top-0 transition-top duration-500">
                                 @if(auth()->user()->notifications()->unread()->count() > 0)
