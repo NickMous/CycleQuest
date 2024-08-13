@@ -44,6 +44,7 @@ function showNextNotification() {
         let notificationStep3 = setTimeout(() => {
             notificationText.innerText = notification.title;
             notificationTextDiv.style.width = 'inherit';
+            notificationTextDiv.classList.add('flex');
             notificationTextDiv.classList.remove('hidden');
             notificationTextDiv.classList.add('top-0');
             notificationTextDiv.classList.remove('top-8');
@@ -56,6 +57,7 @@ function showNextNotification() {
                 clearTimeout(notificationStep4);
                 let notificationStep5 = setTimeout(() => {
                     notificationTextDiv.classList.add('hidden');
+                    notificationTextDiv.classList.remove('flex');
                     notificationTextDiv.style.width = 'auto';
                     notificationInnerDiv.classList.add('w-6');
                     notificationInnerDiv.classList.remove('w-72');

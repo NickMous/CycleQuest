@@ -127,7 +127,7 @@
                                     <i class="fa-solid fa-bell !hidden notificationFull hover:text-text-700 dark:hover:text-dm-text-300"></i>
                                 @endif
                             </div>
-                            <div id="notificationTextDiv" class="flex items-center justify-center h-6 absolute top-8 transition-top hidden">
+                            <div id="notificationTextDiv" class="flex items-center justify-center h-6 absolute top-8 transition-top">
                                 <i></i><p class="dark:text-dm-dark_green-600 truncate">This is just a dummy notification</p>
                             </div>
                         </div>

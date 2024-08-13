@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Description: Check all commands
+## Usage: check-all
+## Example: ddev check-all
+
+php vendor/bin/pest
+php vendor/bin/phpstan analyse
+php vendor/bin/phpcs
