@@ -31,7 +31,7 @@ class SendTestNotification extends Command implements PromptsForMissingInput
     public function handle()
     {
         $user = User::findOrFail($this->argument('user'));
-        $this->info("Sending " . $this->argument('amount') . " test notification(s) to user {$this->argument('user')} with status {$this->argument('status')}.");
+        $this->info('Sending '.$this->argument('amount')." test notification(s) to user {$this->argument('user')} with status {$this->argument('status')}.");
         $this->info('Sleeping for 5 seconds...');
         sleep(5);
         for ($i = 0; $i < $this->argument('amount'); $i++) {

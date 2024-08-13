@@ -336,6 +336,11 @@
                 </div>
 
                 <div class="mt-3 space-y-1">
+                    <x-responsive-nav-link href="{{ route('notifications.index') }}"
+                                           :active="request()->routeIs('notifications.index')">
+                        {{ __('navigation.notifications') }}
+                    </x-responsive-nav-link>
+
                     <!-- Account Management -->
                     <x-responsive-nav-link href="{{ route('profile.show') }}"
                                            :active="request()->routeIs('profile.show')">
