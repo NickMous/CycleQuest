@@ -32,5 +32,6 @@ return [
     'remember_me' => 'Remember me',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'uhoh' => 'Uh oh!',
+    'whoops' => 'Whoops! Something went wrong.',
     'wrong_password' => 'The provided password is incorrect.',
 ];
