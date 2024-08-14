@@ -30,6 +30,7 @@ return [
     'register' => 'Register',
     'register_text' => 'Welcome, nice to meet you!',
     'remember_me' => 'Remember me',
+    'secured_area' => 'This is a secure area of the application. Please log in to continue.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'uhoh' => 'Uh oh!',
     'whoops' => 'Whoops! Something went wrong.',

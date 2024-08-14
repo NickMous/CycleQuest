@@ -5,7 +5,7 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('This is a secure area of the application. Please confirm your password before continuing.') }}
+            {{ __('auth.secured_area') }}
         </div>
 
         <x-validation-errors class="mb-4" />
@@ -20,7 +20,7 @@
 
             <div class="flex justify-end mt-4">
                 <x-button class="ms-4">
-                    {{ __('Confirm') }}
+                    {{ __('auth.confirm') }}
                 </x-button>
             </div>
         </form>

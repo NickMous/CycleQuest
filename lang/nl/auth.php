@@ -30,6 +30,7 @@ return [
     'register' => 'Registreren',
     'register_text' => 'Welkom, leuk je te ontmoeten!',
     'remember_me' => 'Onthou mij',
+    'secured_area' => 'Dit is een beveiligd gebied van de applicatie. Gelieve in te loggen om verder te gaan.',
     'throttle' => 'Te veel inlogpogingen. Probeer het opnieuw over :seconds seconden.',
     'uhoh' => 'Uh oh!',
     'whoops' => 'Whoops! Er is iets misgegaan.',

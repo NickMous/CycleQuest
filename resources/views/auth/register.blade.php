@@ -9,9 +9,9 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <x-input-group divclass="mt-2" :label="__('auth.name')" name="name" type="text" required autofocus autocomplete="name" />
+            <x-input-group divclass="mt-2" :label="__('auth.name')" name="name" type="text" :value="old('name')" required autofocus autocomplete="name" />
 
-            <x-input-group divclass="mt-4" :label="__('auth.email')" name="email" type="email" required autocomplete="username" />
+            <x-input-group divclass="mt-4" :label="__('auth.email')" name="email" type="email" :value="old('email')" required autocomplete="username" />
 
             <x-input-group divclass="mt-4" :label="__('auth.password')" name="password" type="password" required autocomplete="new-password" />
 
