@@ -32,5 +32,6 @@ return [
     'remember_me' => 'Onthou mij',
     'throttle' => 'Te veel inlogpogingen. Probeer het opnieuw over :seconds seconden.',
     'uhoh' => 'Uh oh!',
+    'whoops' => 'Whoops! Er is iets misgegaan.',
     'wrong_password' => 'Het wachtwoord is onjuist.',
 ];
