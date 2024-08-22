@@ -7,7 +7,7 @@ services:
             target: prod
         ports:
             - 1501:80
-            - 22:22
+            - 0:22
         depends_on:
             db:
                 condition: service_healthy

@@ -7,7 +7,7 @@ services:
             target: dev
         ports:
             - 1501:80
-            - 22:22
+            - 0:22
         depends_on:
             db-testing:
                 condition: service_healthy
