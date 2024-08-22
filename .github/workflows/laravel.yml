@@ -27,6 +27,10 @@ jobs:
         uses: docker/setup-buildx-action@v3
       - name: Copy password file
         run: cp database/password.txt.example database/password.txt
+      - name: Copy .env file
+        run: cp .env.example .env
+      - name: Set app key
+        run: sed -i 's/APP_KEY=/APP_KEY=base64:$(openssl rand -base64 32)/' .env
       - name: Set up Docker Compose
         run: |
           docker compose -f compose.testing.yaml up -d
