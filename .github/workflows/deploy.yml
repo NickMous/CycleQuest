@@ -67,4 +67,4 @@ jobs:
           platform: linux/amd64,linux/arm64
           push: true
           target: prod
-          tags: ${{ secrets.DOCKER_USERNAME }}/cyclequest:latest
+          tags: ${{ vars.DOCKER_USERNAME }}/cyclequest:latest
