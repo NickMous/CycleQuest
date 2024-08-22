@@ -1,0 +1,41 @@
+services:
+    mailpit:
+        image: axllent/mailpit
+        container_name: mailpit
+        restart: unless-stopped
+        volumes:
+            - ./data:/data
+        ports:
+            - "8025:8025"
+            - "1025:1025"
+        depends_on:
+            server:
+                condition: service_started
+        environment:
+            MP_MAX_MESSAGES: 5000
+            MP_DATABASE: /data/mailpit.db
+            MP_SMTP_AUTH_ACCEPT_ANY: 1
+            MP_SMTP_AUTH_ALLOW_INSECURE: 1
+
+    server:
+        build:
+            context: .
+            secrets:
+                - db-password
+            target: dev
+        extends:
+            file: compose.yaml
+            service: server
+
+    db:
+        environment:
+            - MARIADB_DATABASES="db db_test"
+        extends:
+            file: compose.yaml
+            service: db
+
+volumes:
+    db-data:
+secrets:
+    db-password:
+        file: database/password.txt
