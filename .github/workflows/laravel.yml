@@ -29,10 +29,10 @@ jobs:
         run: cp database/password.txt.example database/password.txt
       - name: Set up Docker Compose
         run: |
-          docker-compose -f compose.testing.yaml up -d
+          docker compose -f compose.testing.yaml up -d
       - name: Run tests
         run: |
-          docker-compose -f compose.testing.yaml --env-file .env exec server-testing ./vendor/bin/pest tests
+          docker compose -f compose.testing.yaml --env-file .env exec server-testing ./vendor/bin/pest tests
       - name: Tear down Docker Compose
         run: |
           docker-compose -f compose.testing.yaml down
