@@ -39,4 +39,4 @@ jobs:
           docker compose -f compose.testing.yaml --env-file .env exec server-testing ./vendor/bin/pest tests
       - name: Tear down Docker Compose
         run: |
-          docker-compose -f compose.testing.yaml down
+          docker compose -f compose.testing.yaml down
