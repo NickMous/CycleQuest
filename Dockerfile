@@ -46,6 +46,11 @@ FROM php:8.3-apache as base
 RUN docker-php-ext-install pdo_mysql
 COPY .env /var/www/html/.env
 
+# Look at the .env file if DB_PASSWORD is set, otherwise use the password in the secret
+# The secret is mounted in /run/secrets/db-password
+RUN --mount=type=secret,id=db-password \
+    sed -i "s/DB_PASSWORD=/DB_PASSWORD=\"$(cat /run/secrets/db-password)\"/" /var/www/html/.env
+
 # This is for tinker
 RUN mkdir /var/www/.config && chown -R www-data:www-data /var/www/.config
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public

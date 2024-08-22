@@ -28,8 +28,6 @@ services:
             - QUEUE_CONNECTION=sync
             - SESSION_DRIVER=array
             - TELESCOPE_ENABLED=false
-        env_file:
-            - .env
 
     db-testing:
         image: mariadb

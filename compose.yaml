@@ -19,8 +19,6 @@ services:
             - DB_PORT=3306
             - DB_DATABASE=db
             - DB_USERNAME=root
-        env_file:
-            - .env
         develop:
             watch:
                 - action: sync
