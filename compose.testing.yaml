@@ -1,0 +1,56 @@
+services:
+    server-testing:
+        build:
+            context: .
+            secrets:
+                - db-password
+            target: dev
+        ports:
+            - 1501:80
+            - 0:22
+        depends_on:
+            db-testing:
+                condition: service_healthy
+        secrets:
+            - db-password
+        environment:
+            - DB_PASSWORD_FILE=/run/secrets/db-password
+            - DB_HOST=db-testing
+            - DB_PORT=3306
+            - DB_DATABASE=db_testing
+            - DB_USERNAME=root
+            - APP_ENV=testing
+            - APP_MAINTENANCE_DRIVER=file
+            - BCRYPT_ROUNDS=4
+            - CACHE_STORE=file
+            - MAIL_MAILER=array
+            - PULSE_ENABLED=false
+            - QUEUE_CONNECTION=sync
+            - SESSION_DRIVER=array
+            - TELESCOPE_ENABLED=false
+
+    db-testing:
+        image: mariadb
+        restart: always
+        user: root
+        secrets:
+            - db-password
+        volumes:
+            - db-data-testing:/var/lib/mysql
+        environment:
+            - MARIADB_ROOT_PASSWORD_FILE=/run/secrets/db-password
+            - MARIADB_DATABASE=db_testing
+        expose:
+            - 3306
+        healthcheck:
+            test: [ "CMD", "/usr/local/bin/healthcheck.sh", "--su-mysql", "--connect", "--innodb_initialized" ]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+
+volumes:
+    db-data-testing:
+secrets:
+    db-password:
+        file: database/password.txt
+

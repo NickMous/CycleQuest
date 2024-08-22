@@ -1,0 +1,51 @@
+services:
+    server:
+        build:
+            context: .
+            secrets:
+                - db-password
+            target: prod
+        ports:
+            - 1501:80
+            - 0:22
+        depends_on:
+            db:
+                condition: service_healthy
+        secrets:
+            - db-password
+        environment:
+            - DB_PASSWORD_FILE=/run/secrets/db-password
+            - DB_HOST=db
+            - DB_PORT=3306
+            - DB_DATABASE=db
+            - DB_USERNAME=root
+        develop:
+            watch:
+                - action: sync
+                  path: .
+                  target: /var/www/html
+
+    db:
+        image: mariadb
+        restart: always
+        user: root
+        secrets:
+            - db-password
+        volumes:
+            - db-data:/var/lib/mysql
+        environment:
+            - MARIADB_ROOT_PASSWORD_FILE=/run/secrets/db-password
+            - MARIADB_DATABASE=db
+        expose:
+            - 3306
+        healthcheck:
+            test: [ "CMD", "/usr/local/bin/healthcheck.sh", "--su-mysql", "--connect", "--innodb_initialized" ]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+volumes:
+    db-data:
+secrets:
+    db-password:
+        file: database/password.txt
+

@@ -18,3 +18,5 @@ yarn-error.log
 /.idea
 /.vscode
 sitemap.xml
+.DS_Store
+/data
