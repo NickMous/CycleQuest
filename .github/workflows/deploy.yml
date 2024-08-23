@@ -61,6 +61,12 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+      - name: Copy password file
+        run: cp database/password.txt.example database/password.txt
+      - name: Copy .env file
+        run: cp .env.example .env
+      - name: Set app key
+        run: sed -i "s|APP_KEY=|APP_KEY=base64:$(openssl rand -base64 32)|" .env
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
